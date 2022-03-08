@@ -1,5 +1,6 @@
 import { Title } from '@mantine/core'
 import useSWR from 'swr'
+import ToggleThemeButton from '../components/ToggleThemeButton'
 import { fetcher } from '../hooks/swr'
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
 	return (
 		<>
 			<Title>Hello World</Title>
+			<ToggleThemeButton />
 			{!data && !error && <p>Loading</p>}
 			{JSON.stringify(data)}
 		</>
