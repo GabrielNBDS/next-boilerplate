@@ -15,7 +15,7 @@ export default function App({ Component, pageProps}: AppProps) {
 	return (
 		<ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
 			<SWRProvider>
-				<MantineProvider 
+				<MantineProvider
 					withGlobalStyles
 					withNormalizeCSS
 					theme={{
