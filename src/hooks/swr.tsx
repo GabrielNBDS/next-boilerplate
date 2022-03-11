@@ -1,17 +1,13 @@
-
-  
 import { ReactNode } from 'react'
 import { SWRConfig } from 'swr'
 import api from '../lib/axios'
 
 export const fetcher = async (url: string, override = false) => {
-	console.log(url, override)
-
 	if(override) {
 		return (await api.get(url)).data
 	}
 
-	api.get(`${process.env.NEXT_PUBLIC_API_URL}${url}`).then(res => res.data)
+	return api.get(`${process.env.NEXT_PUBLIC_API_URL || ''}${url}`).then(res => res.data)
 }
 
 interface Props {
