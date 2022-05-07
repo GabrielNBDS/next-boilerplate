@@ -4,7 +4,9 @@ import ToggleThemeButton from '../components/ToggleThemeButton'
 import { fetcher } from '../hooks/swr'
 
 function Home() {
-	const { error, data } = useSWR(['https://pokeapi.co/api/v2/pokemon/ditto', true], fetcher)
+	const { error, data } = useSWR(
+		['https://pokeapi.co/api/v2/pokemon/ditto', true], fetcher
+	)
 
 	return (
 		<>

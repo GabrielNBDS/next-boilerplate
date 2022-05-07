@@ -7,7 +7,9 @@ export const fetcher = async (url: string, override = false) => {
 		return (await api.get(url)).data
 	}
 
-	return api.get(`${process.env.NEXT_PUBLIC_API_URL || ''}${url}`).then(res => res.data)
+	return api.get(
+		`${process.env.NEXT_PUBLIC_API_URL || ''}${url}`).then(res => res.data
+	)
 }
 
 interface Props {
