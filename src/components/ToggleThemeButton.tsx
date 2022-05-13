@@ -1,14 +1,22 @@
-import { Switch, useMantineColorScheme } from '@mantine/core'
+import { ActionIcon, useMantineColorScheme } from '@mantine/core'
+import { FiSun, FiMoon } from 'react-icons/fi'
 
 export default function ToggleThemeButton() {
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme()
 	const dark = colorScheme === 'dark'
 
 	return (
-		<Switch
-			checked={dark}
+		<ActionIcon
+			variant="hover"
+			color={dark ? 'yellow' : 'blue'}
 			onClick={() => toggleColorScheme()}
-			label="Dark theme"
-		/>
+			title="Toggle color scheme"
+		>
+			{dark ? (
+				<FiSun style={{ width: 18, height: 18 }} />
+			) : (
+				<FiMoon style={{ width: 18, height: 18 }} />
+			)}
+		</ActionIcon>
 	)
 }
